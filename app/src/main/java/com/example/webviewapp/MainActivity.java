@@ -11,32 +11,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
-
-    WebView myWebView;
     public void showExternalWebPage(){
-        myWebView = findViewById(R.id.webview);
-        myWebView.setWebViewClient(new WebViewClient());
-        myWebView.getSettings().setJavaScriptEnabled(true);
-        myWebView.loadUrl("https://github.com/a22ricni/mobileapp-programming-webview/commits/master");
+        myWebView.loadUrl("https://his.se");
     }
 
     public void showInternalWebPage(){
-        myWebView = findViewById(R.id.webview);
-        myWebView.setWebViewClient(new WebViewClient());
-        myWebView.getSettings().setJavaScriptEnabled(true);
-        myWebView.loadUrl("https://github.com/LenaSYS/mobileapp-programming-webview/tree/master/app/src/main/res");
+        myWebView.loadUrl("file:///android_asset/about.html");
     }
 
+    WebView myWebView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        WebView myWebView = findViewById(R.id.webview);
+        setSupportActionBar(toolbar);
+
+        myWebView = findViewById(R.id.webview);
         myWebView.setWebViewClient(new WebViewClient());
         myWebView.getSettings().setJavaScriptEnabled(true);
-        myWebView.loadUrl("https://his.se");
-        setSupportActionBar(toolbar);
+
 
         /*
         * Rename your App. Tip: Values->Strings
