@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         WebView myWebView = findViewById(R.id.webview);
         myWebView.setWebViewClient(new WebViewClient());
+        myWebView.getSettings().setJavaScriptEnabled(true);
         setSupportActionBar(toolbar);
 
         /*
